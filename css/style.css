@@ -1,0 +1,285 @@
+
+
+
+
+/* Global */
+body {
+    padding:0;
+    margin:0;
+    font: 15px/1.5 arial;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+input, button, textarea {
+    outline: none;
+}
+
+/* By giving any button this class, the style will apply */
+.submit-btn {
+    height: 38px;
+    background-color: #e8491d;
+    border: none;
+    padding: 0 20px;
+    color: #fff;
+    outline: none;
+}
+
+/* Just by wrapping a div with class dark to any element, it will work */
+.dark { 
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #35424a;
+    color: #fff;
+}
+
+header {
+    color: #fff;
+    min-height: 70px;
+    padding-top: 30px;
+    background-color: #35424a;
+    border-bottom: 3px solid #e8491d;
+}
+
+                                    /* HEADER */
+/* Header anchor links */
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul li {
+    float: left;
+    padding: 0 20px;
+    display: inline; /* Display doesnt usually work with float, but here it is good when we use it for the meida queries */
+}
+
+/* Header brand name */
+header .container .branding {
+    float: left;
+}
+
+header .container .branding h1 {
+    margin: 0;
+}
+
+/* Note that we change the class position and move it one to the relavent item in the list taht the current page refers to */
+header .container .branding .highlight, .current a {
+    color: #eb491d;
+    font-weight: bold;
+}
+
+/* Header main navigation */
+header .container nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .container nav ul li a:hover {
+    color: #ccc;
+    font-weight: bold;
+}
+
+                                    /* SHOWCASE */
+
+.showcase {
+    min-height: 400px;
+    background: url('../images/showcase.jpg') no-repeat 0 -80px;
+    background-size: cover;
+    background-position: 50% 50%;
+    text-align: center;
+    color: #fff;
+    opacity: .8;
+}
+
+.showcase .container h1 {
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.showcase .container p {
+    font-family: 20px
+}
+
+
+                                    /* NEWSLETTER  */
+.newsletter {
+    padding: 15px;
+    background-color: #35424a;
+}
+
+.newsletter .container h1 {
+    float: left;
+    color: #fff;
+}
+
+.newsletter .container form {
+    margin-top: 15px;
+    float: right;
+}
+
+.newsletter .container form input[type='email'] {
+    padding: 5px;
+    height: 25px;
+    width: 250px;
+}
+
+
+                                    /* BOXES */
+.boxes {
+    /* margin-top: 20px; */
+}
+
+.boxes .container .box {
+    padding: 10px;
+    width: 30%;
+    float: left;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.boxes .container .box img {
+    width: 70%;
+}
+
+                                /* ABOUT PAGE */
+/* about, services pages main content */
+.main .container .main-content {
+    width: 60%;
+    float: left;
+    margin-top: 15px;
+}
+
+/* what we do side section */
+.main .container .side-content {
+    width: 30%;
+    float: right;
+    margin-top: 15px;
+}
+
+
+                                /* SERVICES PAGE */
+/* */
+.main .container .main-content .services-list li {
+    padding: 0 20px;
+    background-color: #e6e6e6;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+
+.side-content .dark .quote input[type="text"], input[type="email"], textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    color: #777;
+}
+
+.side-content .dark .quote textarea {
+    max-width: 80%;
+    font-family: arial;
+}
+
+
+
+                                 /* FOOTER */
+/* Global */
+footer {
+    padding: 10px;
+    color: #fff;
+    background-color: #e8491d;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+                            /* MEDIA QUEIRES */
+/* Take affect when this size is reached which almost the tablet size */
+/* We need to get rid of the float so that things come on top of each other */
+@media(max-width: 768px) {
+
+    header .container .branding,
+    header .container nav,
+    header .container nav li {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        padding: 15px 0 10px;
+    }
+
+    .showcase .container h1 {
+        margin-top: 60px;
+        font-size: 40px;
+    }
+
+    .newsletter .container h1,
+    .newsletter .container form {
+        text-align: center;
+        float: none;
+    }
+
+    .newsletter .container form button,
+    .newsletter .container form input[type="email"] {
+        display: block;
+        width: 100%;
+    }
+
+    .boxes .container .box {
+        float: none;
+        margin: auto;
+    }
+
+    .boxes .container .box img {
+        width: 100%;
+    }
+
+    /* in the about we need to remobe the float for the side and main content */
+
+    .main .container .main-content,
+    .main .container .side-content {
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+
+    .main .container h1 {
+        text-align: center;
+    }
+
+    /* Services */
+
+    .main .container .main-content .services-list li {
+        margin-bottom: 20px;
+    }
+
+    .main .container .side-content .dark .quote {
+        text-align: center;
+    }
+
+    .main .container .side-content .dark .quote .submit-btn {
+        width: 85%;
+    }
+
+}
+
+
+
+
